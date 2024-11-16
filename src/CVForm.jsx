@@ -24,12 +24,6 @@ const CVForm = ({ cvData, setCvData }) => {
         });
     };
 
-    const removeItem = (key, index) => {
-        const updatedArray = [...cvData[key]];
-        updatedArray.splice(index, 1);
-        setCvData({ ...cvData, [key]: updatedArray });
-    };
-
     return (
         <form>
             <h2>Informations personnelles</h2>
@@ -108,7 +102,6 @@ const CVForm = ({ cvData, setCvData }) => {
                         value={exp.description}
                         onChange={(e) => handleArrayChange(e, index, 'description', 'experiences')}
                     />
-                    <button type="button" onClick={() => removeItem('experiences', index)}>Supprimer</button>
                 </div>
             ))}
             <button type="button" onClick={() => addItem('experiences')}>Ajouter une expérience</button>
@@ -145,7 +138,6 @@ const CVForm = ({ cvData, setCvData }) => {
                         value={edu.description}
                         onChange={(e) => handleArrayChange(e, index, 'description', 'education')}
                     />
-                    <button type="button" onClick={() => removeItem('education', index)}>Supprimer</button>
                 </div>
             ))}
             <button type="button" onClick={() => addItem('education')}>Ajouter une formation</button>
@@ -163,7 +155,7 @@ const CVForm = ({ cvData, setCvData }) => {
                             setCvData({ ...cvData, skills: updatedSkills });
                         }}
                     />
-                    <button type="button" onClick={() => removeItem('skills', index)}>Supprimer</button>
+
                 </div>
             ))}
             <button type="button" onClick={() => addItem('skills')}>Ajouter une compétence</button>
@@ -181,7 +173,6 @@ const CVForm = ({ cvData, setCvData }) => {
                             setCvData({ ...cvData, hobbies: updatedHobbies });
                         }}
                     />
-                    <button type="button" onClick={() => removeItem('hobbies', index)}>Supprimer</button>
                 </div>
             ))}
             <button type="button" onClick={() => addItem('hobbies')}>Ajouter un loisir</button>
