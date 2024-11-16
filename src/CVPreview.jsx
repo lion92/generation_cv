@@ -38,8 +38,8 @@ const CVPreview = ({ cvData }) => {
             <div className="cv-section">
                 <h2>Compétences</h2>
                 <div className="cv-skills">
-                    {cvData.skills.split(',').map((skill, index) => (
-                        <span key={index} className="cv-skill">{skill.trim()}</span>
+                    {cvData.skills.map((skill, index) => (
+                        skill.trim() && <span key={index} className="cv-skill">{skill.trim()}</span>
                     ))}
                 </div>
             </div>
@@ -48,9 +48,11 @@ const CVPreview = ({ cvData }) => {
             <div className="cv-section">
                 <h2>Loisirs</h2>
                 <ul className="cv-hobbies">
-                    {cvData.hobbies.map((hobby, index) => (
-                        <li key={index}>{hobby}</li>
-                    ))}
+                    {cvData.hobbies
+                        .filter((hobby) => hobby.trim() !== '') // Filtre les loisirs vides
+                        .map((hobby, index) => (
+                            <li key={index}>{hobby}</li>
+                        ))}
                 </ul>
             </div>
         </div>

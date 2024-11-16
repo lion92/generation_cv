@@ -1,5 +1,6 @@
 import React from 'react';
-import '../src/css/form.css'
+import '../src/css/form.css';
+
 const CVForm = ({ cvData, setCvData }) => {
     const handlePersonalChange = (e) => {
         const { name, value } = e.target;
@@ -13,9 +14,13 @@ const CVForm = ({ cvData, setCvData }) => {
     };
 
     const addItem = (key) => {
+        const newItem =
+            key === 'hobbies' || key === 'skills'
+                ? ''
+                : { degree: '', institution: '', startDate: '', endDate: '', description: '' };
         setCvData({
             ...cvData,
-            [key]: [...cvData[key], { degree: '', institution: '', startDate: '', endDate: '', description: '' }],
+            [key]: [...cvData[key], newItem],
         });
     };
 
@@ -146,11 +151,22 @@ const CVForm = ({ cvData, setCvData }) => {
             <button type="button" onClick={() => addItem('education')}>Ajouter une formation</button>
 
             <h2>Compétences</h2>
-            <textarea
-                placeholder="Compétences"
-                value={cvData.skills}
-                onChange={(e) => setCvData({ ...cvData, skills: e.target.value })}
-            />
+            {cvData.skills.map((skill, index) => (
+                <div key={index}>
+                    <input
+                        type="text"
+                        placeholder="Compétence"
+                        value={skill}
+                        onChange={(e) => {
+                            const updatedSkills = [...cvData.skills];
+                            updatedSkills[index] = e.target.value;
+                            setCvData({ ...cvData, skills: updatedSkills });
+                        }}
+                    />
+                    <button type="button" onClick={() => removeItem('skills', index)}>Supprimer</button>
+                </div>
+            ))}
+            <button type="button" onClick={() => addItem('skills')}>Ajouter une compétence</button>
 
             <h2>Loisirs</h2>
             {cvData.hobbies.map((hobby, index) => (

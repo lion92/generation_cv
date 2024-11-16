@@ -21,7 +21,7 @@ const App = () => {
     education: [
       { degree: '', institution: '', startDate: '', endDate: '', description: '' },
     ],
-    skills: '',
+    skills: [''],
     hobbies: [''],
   });
 
