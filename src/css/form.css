@@ -1,0 +1,131 @@
+/* form.css */
+
+/* Container global du formulaire */
+form {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+}
+
+/* En-tête de chaque section */
+form h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+}
+
+/* Labels */
+form label {
+    display: block;
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs, Textarea, et Select */
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Focus sur les champs */
+form input:focus,
+form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Boutons généraux */
+form button {
+    background: #3498db;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover sur les boutons */
+form button:hover {
+    background: #2980b9;
+}
+
+/* Section des expériences et formations */
+form .section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+}
+
+/* Boutons Ajouter/Supprimer */
+form .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+form .action-buttons button {
+    margin-left: 10px;
+}
+
+/* Alignement des champs */
+form .section-row {
+    display: flex;
+    gap: 10px;
+}
+
+form .section-row input {
+    flex: 1;
+}
+
+/* Bouton Ajouter/Supprimer centré */
+form .add-button,
+form .remove-button {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Animation au survol */
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+/* Mobile friendly */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    form .section-row {
+        flex-direction: column;
+    }
+
+    form .action-buttons {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    form button {
+        width: 100%;
+    }
+}

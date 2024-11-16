@@ -1,0 +1,90 @@
+/* app.css */
+
+/* Corps de la page */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal de l'application */
+.app {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Conteneur pour le formulaire */
+.form-container {
+    flex: 1;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Conteneur pour l'aperçu et le bouton de téléchargement */
+.preview-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Bouton Télécharger le PDF */
+.preview-container a {
+    text-align: center;
+    padding: 15px 20px;
+    background: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+}
+
+.preview-container a:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Style pour les composants enfants dans la preview */
+.cv-preview {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ecf0f1;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .form-container,
+    .preview-container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,94 @@
+/* CVPreview.css */
+
+/* Conteneur principal */
+.cv-preview {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* En-tête */
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.cv-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.cv-header p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Sections */
+.cv-section {
+    margin-bottom: 20px;
+}
+
+.cv-section h2 {
+    font-size: 22px;
+    color: #3498db;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+/* Items (Expériences, Formations) */
+.cv-item {
+    margin-bottom: 15px;
+}
+
+.cv-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.cv-item h3 span {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.cv-item p {
+    font-size: 14px;
+    color: #34495e;
+}
+
+/* Compétences */
+.cv-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cv-skill {
+    background: #3498db;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Loisirs */
+.cv-hobbies {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #34495e;
+}
+
+.cv-hobbies li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
